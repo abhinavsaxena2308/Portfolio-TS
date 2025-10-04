@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, Github, Linkedin, Twitter, Mail , Instagram } from "lucide-react";
+import { Send, Github, Linkedin, Instagram, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,35 +15,39 @@ const Contact = () => {
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      // Convert to form-urlencoded
+      const params = new URLSearchParams();
+      params.append("name", formData.name);
+      params.append("email", formData.email);
+      params.append("message", formData.message);
 
-    const result = await response.json();
-
-    if (result.status === "success") {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon!",
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
       });
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      throw new Error(result.message || "Failed to send message");
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(result.message || "Failed to send message");
+      }
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Something went wrong. Please try again later.",
+      });
     }
-  } catch (error: any) {
-    toast({
-      title: "Error",
-      description: error.message || "Something went wrong. Please try again later.",
-    });
-  }
-};
-
-
+  };
 
   const socialLinks = [
     { icon: Github, label: "GitHub", url: "https://github.com/abhinavsaxena2308" },
@@ -68,9 +72,7 @@ const Contact = () => {
           <Card className="p-8 bg-card border-border animate-fade-in">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
                 <Input
                   id="name"
                   type="text"
@@ -83,9 +85,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
                 <Input
                   id="email"
                   type="email"
@@ -98,9 +98,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                 <Textarea
                   id="message"
                   placeholder="Tell me about your project..."
@@ -116,8 +114,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-gradient-to-r from-primary to-purple-500 hover:opacity-90 hover:scale-105 transition-all"
               >
-                <Send className="w-4 h-4 mr-2" />
-                Send Message
+                <Send className="w-4 h-4 mr-2" /> Send Message
               </Button>
             </form>
           </Card>
@@ -137,9 +134,7 @@ const Contact = () => {
                       className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 border border-border hover:border-primary/50 hover:bg-primary/10 transition-all group"
                     >
                       <Icon className="w-5 h-5 text-primary" />
-                      <span className="font-medium group-hover:text-primary transition-colors">
-                        {social.label}
-                      </span>
+                      <span className="font-medium group-hover:text-primary transition-colors">{social.label}</span>
                     </a>
                   );
                 })}
