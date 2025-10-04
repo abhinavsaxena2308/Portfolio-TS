@@ -20,7 +20,7 @@ const Contact = () => {
   try {
     const response = await fetch("/api/contact", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: JSON.stringify(formData),
     });
 
