@@ -155,15 +155,16 @@ const Projects = () => {
                     onClick={() => window.open(project.link, "_blank")}
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    Website
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-primary/50 hover:bg-primary/10"
+                    className="flex-1 border-primary/50 hover:bg-primary/10"
                     onClick={() => window.open(project.github, "_blank")}
                   >
                     <Github className="w-4 h-4" />
+                    Code
                   </Button>
                 </div>
               </div>
