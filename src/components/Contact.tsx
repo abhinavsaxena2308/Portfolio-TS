@@ -144,10 +144,10 @@ const Contact = () => {
             <Card className="p-8 bg-gradient-to-br from-primary/10 to-purple-500/10 border-primary/20">
               <h3 className="text-xl font-bold mb-4">Download CV</h3>
               <p className="text-muted-foreground mb-6">
-                Get a copy of my resume to learn more about my experience and skills.
+                Get a copy of my resume to know more about my experience and skills.
               </p>
               <Button
-                onClick={() => window.open("https://www.google.com", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/16eytxtKpfNyYVuJTwTOvsGmnMYh9YxUr/view?usp=sharing", "_blank")}
                 className="w-full bg-gradient-to-r from-primary to-purple-500 hover:opacity-90"
               >
                 Download CV

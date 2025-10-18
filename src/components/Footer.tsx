@@ -10,8 +10,8 @@ const Footer = () => {
           <div className="h-0.5 w-32 bg-gradient-to-r from-transparent via-primary to-transparent" />
           
           <p className="text-muted-foreground flex items-center gap-2">
-            Designed & Developed with <Heart className="w-4 h-4 text-primary fill-primary" /> by{" "}
-            <span className="text-primary font-semibold">Your Name</span>
+            Designed & Developed with by{" "}
+            <span className="text-primary font-semibold">Abhinav</span>
           </p>
           
           <p className="text-sm text-muted-foreground">
