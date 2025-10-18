@@ -124,7 +124,7 @@ const Hero = () => {
               <Instagram size={24} />
             </a>
             <a
-              href="mailto:abhinav.2025@gmail.com?subject=Hello%20Abhinav&body=I%20want%20to%20contact%20you%20regarding..."
+              href="mailto:abhinav.2025@iic.ac.in?subject=Hello%20Abhinav&body=I%20want%20to%20contact%20you%20regarding..."
               className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform"
             >
               <Mail size={24} />

@@ -58,7 +58,7 @@ const Contact = () => {
     { icon: Github, label: "GitHub", url: "https://github.com/abhinavsaxena2308" },
     { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/in/abhinav-saxena-6379a3290/" },
     { icon: Instagram, label: "Instagram", url: "https://www.instagram.com/abhiiiii_2308/" },
-    { icon: Mail, label: "Email", url: "mailto:abhinav.2025@gmail.com?subject=Hello%20Abhinav&body=I%20want%20to%20contact%20you%20regarding..." },
+    { icon: Mail, label: "Email", url: "mailto:abhinav.2025@iic.ac.in?subject=Hello%20Abhinav&body=I%20want%20to%20contact%20you%20regarding..." },
   ];
 
   return (
