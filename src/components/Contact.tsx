@@ -13,39 +13,44 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    // ✅ Replace this with your actual Google Apps Script Web App URL
+    const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
     try {
-      // Convert to form-urlencoded
-      const params = new URLSearchParams();
-      params.append("name", formData.name);
-      params.append("email", formData.email);
-      params.append("message", formData.message);
-
-      const response = await fetch("/api/contact", {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
+        mode: "no-cors", // ✅ Needed for Google Script to avoid CORS blocking
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        }),
       });
 
-      const result = await response.json();
-
-      if (result.status === "success") {
-        toast({
-          title: "Message sent!",
-          description: "Thanks for reaching out. I'll get back to you soon!",
-        });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error(result.message || "Failed to send message");
-      }
-    } catch (error: any) {
+      // ✅ Since "no-cors" returns opaque response, assume success if no error
+      toast({
+        title: "Success",
+        description: "Message sent successfully!",
+      });
+      setFormData({ name: "", email: "", message: "" }); // reset form
+    } catch (error) {
+      console.error("Error sending message:", error);
       toast({
         title: "Error",
-        description: error.message || "Something went wrong. Please try again later.",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -112,9 +117,19 @@ const Contact = () => {
 
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-primary to-purple-500 hover:opacity-90 hover:scale-105 transition-all"
               >
-                <Send className="w-4 h-4 mr-2" /> Send Message
+                {isSubmitting ? (
+                  <span className="flex items-center">
+                    <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></span>
+                    Sending...
+                  </span>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4 mr-2" /> Send Message
+                  </>
+                )}
               </Button>
             </form>
           </Card>

@@ -56,14 +56,7 @@ const Header = () => {
             onClick={() => scrollToSection("home")}
             className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent hover:opacity-80 hover:scale-110 transition-all duration-300 animate-gradient-shift bg-[length:200%_auto]"
           >
-          <button
-          onClick={() => scrollToSection("home")}
-          className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent hover:opacity-80 hover:scale-110 transition-all duration-300 animate-gradient-shift bg-[length:200%_auto]"
-        >
-           Abhinav
-        </button>
-
-
+            Abhinav
           </button>
 
           {/* Desktop Navigation */}

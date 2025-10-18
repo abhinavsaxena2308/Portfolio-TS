@@ -32,7 +32,6 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5"
     >
-      {/* 🔹 LightRays background (scrolls with the Hero section) */}
       <div className="absolute inset-0 z-0">
         <LightRays
           raysOrigin="top-center"
@@ -47,8 +46,6 @@ const Hero = () => {
           className="opacity-60 blur-sm"
         />
       </div>
-
-      {/* 🔹 Animated gradient blobs (optional visual touch) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float" />
         <div
