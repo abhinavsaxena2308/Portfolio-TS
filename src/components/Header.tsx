@@ -109,7 +109,7 @@ const Header = () => {
                 </button>
               ))}
               <Button
-                onClick={() => window.open("/cv.pdf", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/16eytxtKpfNyYVuJTwTOvsGmnMYh9YxUr/view?usp=sharing", "_blank")}
                 className="bg-gradient-to-r from-primary to-purple-500 hover:opacity-90 w-full"
               >
                 Download CV

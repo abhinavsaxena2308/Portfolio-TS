@@ -27,13 +27,21 @@ const About = () => {
           <div className="animate-fade-in">
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-2xl blur-2xl" />
-              <div className="relative bg-card rounded-2xl p-8 border border-border shadow-lg">
-                <div className="w-full aspect-square bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-xl flex items-center justify-center">
-                  <span className="text-6xl">👨‍💻</span>
+              <div className="relative bg-card rounded-2xl p-8 border border-border shadow-lg overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute w-3/4 h-3/4 bg-gradient-to-tr from-purple-500 via-pink-500 to-primary rounded-full blur-3xl opacity-30 scale-110 animate-pulse" />
+                </div>
+                <div className="relative w-full aspect-square bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-xl flex items-center justify-center hover:scale-105 transition-all duration-500">
+                  <img
+                    src="/profile_pic.png"
+                    alt="Abhinav"
+                    className="object-cover rounded-xl shadow-2xl relative z-10"
+                  />
                 </div>
               </div>
             </div>
           </div>
+
 
           <div className="space-y-6 animate-fade-in">
             <h3 className="text-2xl font-bold">Hello! I'm a Developer</h3>

@@ -35,12 +35,12 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <LightRays
           raysOrigin="top-center"
-          raysColor="#00ffff"
+          raysColor="#f05a9a"
           raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
+          lightSpread={0.9}
+          rayLength={1.8}
           followMouse={true}
-          mouseInfluence={0.1}
+          mouseInfluence={0.2}
           noiseAmount={0.1}
           distortion={0.05}
           className="opacity-60 blur-sm"
