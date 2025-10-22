@@ -44,12 +44,13 @@ const Projects = () => {
       github: "https://github.com",
     },
     {
-      title: "Sentiment Analysis Tool",
-      category: "NLP",
-      description: "Real-time sentiment analysis for social media posts and customer reviews.",
-      tech: ["Python", "NLTK", "Transformers"],
-      link: "https://example.com",
-      github: "https://github.com",
+      title: "AI Resume Builder",
+      category: "Web Dev",
+      description: "Resume Builder is a next-gen AI-powered resume generator that crafts professional summaries using the Google Generative Language API..",
+      tech: ["ReactJS", "EJS", "Google GenAI"],
+      link: "https://ai-resume-builder-six-kappa.vercel.app/",
+      github: "https://github.com/abhinavsaxena2308/AI-Resume-Builder",
+			banner : url("https://imgdb.in/mU7H")
     },
     {
       title: "AI Chatbot Assistant",
