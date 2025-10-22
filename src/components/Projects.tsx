@@ -50,7 +50,7 @@ const Projects = () => {
       tech: ["ReactJS", "EJS", "Google GenAI"],
       link: "https://ai-resume-builder-six-kappa.vercel.app/",
       github: "https://github.com/abhinavsaxena2308/AI-Resume-Builder",
-			banner : url("https://imgdb.in/mU7H")
+			banner : "https://imgdb.in/mU7H"
     },
     {
       title: "AI Chatbot Assistant",
