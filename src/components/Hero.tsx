@@ -32,20 +32,6 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5"
     >
-      <div className="absolute inset-0 z-0">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#f05a9a"
-          raysSpeed={1.5}
-          lightSpread={0.9}
-          rayLength={1.8}
-          followMouse={true}
-          mouseInfluence={0.2}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="opacity-60 blur-sm"
-        />
-      </div>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float" />
         <div

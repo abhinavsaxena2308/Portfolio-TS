@@ -19,13 +19,9 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // ✅ Replace this with your actual Google Apps Script Web App URL
-    const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      const response = await fetch('/api/contact', {
         method: "POST",
-        mode: "no-cors", // ✅ Needed for Google Script to avoid CORS blocking
         headers: {
           "Content-Type": "application/json",
         },

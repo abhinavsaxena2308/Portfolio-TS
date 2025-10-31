@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const Projects = () => {
-  const categories = ["All", "Web Dev", "App Dev", "ML", "NLP", "LLM"];
+  const categories = ["All", "Web Dev", "App Dev", "LLM"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
@@ -17,6 +17,15 @@ const Projects = () => {
       tech: ["React", "Node.js", "MongoDB", "Stripe","Firebase", "Vite", "Express.JS"],
       link: "https://instant-cake-ecom.vercel.app/",
       github: "https://github.com/abhinavsaxena2308/InstantCakeEcom---MERN-",
+    },
+    {
+      title: "E-Com Platform for Military Apparel and Gear",
+      category: "Web Dev",
+      banner: "./rohilla.png",
+      description: "A full-stack e-commerce website for ordering military gears-with real-time inventory management and payment integration.",
+      tech: ["React", "Node.js", "MongoDB", "Stripe","Firebase", "Vite", "Express.JS"],
+      link: "https://poc-rohilla.vercel.app/",
+      github: "https://github.com/abhinavsaxena2308/POC-ROHILLA",
     },
     {
       title: "BudgetWise - Expense Tracker",
@@ -35,14 +44,6 @@ const Projects = () => {
       link: "https://example.com",
       banner: "./weather.png",
       github: "https://github.com/abhinavsaxena2308/Weather-app",
-    },
-    {
-      title: "Image Classification Model",
-      category: "ML",
-      description: "Deep learning model for multi-class image classification with 95% accuracy.",
-      tech: ["Python", "TensorFlow", "CNN"],
-      link: "https://example.com",
-      github: "https://github.com",
     },
     {
       title: "AI Resume Builder",
