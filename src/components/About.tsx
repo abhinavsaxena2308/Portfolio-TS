@@ -56,7 +56,7 @@ const About = () => {
              systems powered by LLMs. I’m always eager to explore, learn, and push the boundaries of what technology 
              can do.
             </p>
-            <div className="flex flex-wrap gap-3">
+            {/* <div className="flex flex-wrap gap-3">
               {["React", "Python", "TypeScript", "Flutter", "AI/ML", "Node.js"].map((tech) => (
                 <span
                   key={tech}
@@ -65,7 +65,7 @@ const About = () => {
                   {tech}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 

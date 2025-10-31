@@ -59,7 +59,7 @@ const Projects = () => {
       category: "Web Dev",
       banner: "./textvault.png",
       description: "A beautiful, modern web application for securely storing and managing your text notes using Firebase Realtime Database. Features a stunning neumorphic + glassmorphic design with dark/light mode support.",
-      tech: ["ReactJS", "EJS", "Google GenAI"],
+      tech: ["HTML", "CSS", "JS", "Firebase"],
       link: "https://text-vault-01.vercel.app/",
       github: "https://github.com/abhinavsaxena2308/TextVault"
     },
@@ -68,7 +68,7 @@ const Projects = () => {
       category: "LLM",
       banner:"./RamX.png",
       description: "RamX is designed to support studies, coding, and personal tasks while speaking naturally in both Hindi and English.",
-      tech: ["OpenAI", "LangChain", "React"],
+      tech: ["OpenAI", "LangChain", "Python", "Mem0"],
       github: "https://github.com/abhinavsaxena2308/RamX---Python-AI-Assistant",
     },
     {

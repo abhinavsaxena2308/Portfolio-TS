@@ -77,7 +77,7 @@ const Header = () => {
               </button>
             ))}
             <Button
-              onClick={() => window.open("https://drive.google.com/file/d/1HYrmhelrRPL7L1OhLnM35hewS11npYAp/view?usp=sharing", "_blank")}
+              onClick={() => window.open("https://drive.google.com/file/d/1NSGoiIWlmMS_WovXGQLRIfmN6NqFcyJh/view?usp=sharing", "_blank")}
               className="bg-gradient-to-r from-primary to-purple-500 hover:opacity-90 hover:scale-105 transition-all hover:shadow-lg hover:shadow-primary/50"
             >
               Download CV
@@ -109,7 +109,7 @@ const Header = () => {
                 </button>
               ))}
               <Button
-                onClick={() => window.open("https://drive.google.com/file/d/1HYrmhelrRPL7L1OhLnM35hewS11npYAp/view?usp=sharing", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/1NSGoiIWlmMS_WovXGQLRIfmN6NqFcyJh/view?usp=sharingx", "_blank")}
                 className="bg-gradient-to-r from-primary to-purple-500 hover:opacity-90 w-full"
               >
                 Download CV
