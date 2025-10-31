@@ -28,12 +28,13 @@ const Projects = () => {
       github: "https://github.com/abhinavsaxena2308/BudgetWise-ExpenseTracker",
     },
     {
-      title: "Fitness Tracker App",
+      title: "Weather App",
       category: "App Dev",
       description: "Cross-platform mobile app for tracking workouts, nutrition, and health metrics.",
       tech: ["Flutter", "Firebase", "ML Kit"],
       link: "https://example.com",
-      github: "https://github.com",
+      banner: "./weather.png",
+      github: "https://github.com/abhinavsaxena2308/Weather-app",
     },
     {
       title: "Image Classification Model",
@@ -46,19 +47,37 @@ const Projects = () => {
     {
       title: "AI Resume Builder",
       category: "Web Dev",
+      banner: "./resume.png",
       description: "Resume Builder is a next-gen AI-powered resume generator that crafts professional summaries using the Google Generative Language API..",
       tech: ["ReactJS", "EJS", "Google GenAI"],
       link: "https://ai-resume-builder-six-kappa.vercel.app/",
-      github: "https://github.com/abhinavsaxena2308/AI-Resume-Builder",
-			banner : "https://imgdb.in/mU7H"
+      github: "https://github.com/abhinavsaxena2308/AI-Resume-Builder"
     },
     {
-      title: "AI Chatbot Assistant",
+      title: "Text Vault",
+      category: "Web Dev",
+      banner: "./textvault.png",
+      description: "A beautiful, modern web application for securely storing and managing your text notes using Firebase Realtime Database. Features a stunning neumorphic + glassmorphic design with dark/light mode support.",
+      tech: ["ReactJS", "EJS", "Google GenAI"],
+      link: "https://text-vault-01.vercel.app/",
+      github: "https://github.com/abhinavsaxena2308/TextVault"
+    },
+    {
+      title: "RamX - Python based Assistant",
       category: "LLM",
-      description: "Intelligent chatbot powered by GPT for customer support automation.",
+      banner:"./RamX.png",
+      description: "RamX is designed to support studies, coding, and personal tasks while speaking naturally in both Hindi and English.",
       tech: ["OpenAI", "LangChain", "React"],
-      link: "https://example.com",
-      github: "https://github.com",
+      github: "https://github.com/abhinavsaxena2308/RamX---Python-AI-Assistant",
+    },
+    {
+      title: "CodeGen - Component Creator",
+      category: "LLM",
+      banner:"./CodeGen.png",
+      description: "CODEGEN: Transform natural language prompts into ready-to-use UI components instantly..",
+      tech: ["OpenAI", "LangChain", "React"],
+      link: "https://code-gen-component-creator.vercel.app/",
+      github: "https://github.com/abhinavsaxena2308/CodeGen-ComponentCreator",
     },
     {
       title: "CodeWave - A simple code editor",
