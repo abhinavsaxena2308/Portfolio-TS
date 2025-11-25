@@ -158,7 +158,7 @@ const Contact = () => {
                 Get a copy of my resume to know more about my experience and skills.
               </p>
               <Button
-                onClick={() => window.open("https://drive.google.com/file/d/1NSGoiIWlmMS_WovXGQLRIfmN6NqFcyJh/view?usp=sharingx", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/1ReS9Gj9OwT8T0UHSB2-og0firG5f01be/view?usp=sharing", "_blank")}
                 className="w-full bg-gradient-to-r from-primary to-purple-500 hover:opacity-90"
               >
                 Download CV
