@@ -19,6 +19,15 @@ const Projects = () => {
       github: "https://github.com/abhinavsaxena2308/InstantCakeEcom---MERN-",
     },
     {
+      title: "Task Flow : Organize and Manage your Tasks",
+      category: "Web Dev",
+      banner: "./taskflow.png",
+      description: "TaskFlow is a modern, responsive task management application built with cutting-edge technologies.",
+      tech: ["React", "GoLang", "Postgresql", "Supabase","React-Router", "Vite", ""],
+      link: "https://to-do-master-beta.vercel.app/",
+      github: "https://github.com/abhinavsaxena2308/TaskFlow",
+    },
+    {
       title: "E-Com Platform for Military Apparel and Gear",
       category: "Web Dev",
       banner: "./rohilla.png",
