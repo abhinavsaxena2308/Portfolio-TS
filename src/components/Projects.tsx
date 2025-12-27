@@ -23,7 +23,7 @@ const Projects = () => {
       category: "Web Dev",
       banner: "./taskflow.png",
       description: "TaskFlow is a modern, responsive task management application built with cutting-edge technologies.",
-      tech: ["React", "GoLang", "Postgresql", "Supabase","React-Router", "Vite", ""],
+      tech: ["React", "GoLang", "Postgresql", "Supabase","React-Router", "Vite"],
       link: "https://to-do-master-beta.vercel.app/",
       github: "https://github.com/abhinavsaxena2308/TaskFlow",
     },
