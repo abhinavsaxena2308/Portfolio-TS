@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 const Projects = () => {
   const categories = ["All", "Web Dev", "App Dev", "LLM"];
   const [activeCategory, setActiveCategory] = useState("All");
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
   const projects = [
     {
@@ -134,106 +134,99 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative">
           {filteredProjects.map((project, index) => (
             <div
               key={project.title}
-              className="animate-slide-in-right"
+              className="animate-slide-in-right h-full"
               style={{
-                animationDelay: `${index * 0.1}s`,
+                animationDelay: `${index * 0.08}s`,
                 animationFillMode: "backwards",
               }}
-              onMouseEnter={() => setHoveredProject(project.title)}
-              onMouseLeave={() => setHoveredProject(null)}
             >
-              <Card className="group relative h-full flex flex-col overflow-hidden bg-gradient-to-br from-card to-card/50 border-border/50 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-
-                <div className="relative aspect-video bg-gradient-to-br from-slate-900 to-slate-800 overflow-hidden">
+              <div
+                className="relative h-full cursor-pointer"
+                onMouseEnter={() => setExpandedProject(project.title)}
+                onMouseLeave={() => setExpandedProject(null)}
+              >
+                <Card className="group relative overflow-hidden bg-gradient-to-br from-card to-card/50 border-border/50 h-40 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20">
                   <img
                     src={project.banner}
-                    alt={`${project.title} banner`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary/90 text-primary-foreground shadow-lg text-xs font-semibold">
+                  <div className="absolute inset-0 flex flex-col justify-between p-4">
+                    <Badge className="bg-primary/90 text-primary-foreground text-xs font-semibold w-fit">
                       {project.category}
                     </Badge>
-                  </div>
-
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex gap-2">
-                      {project.link && (
-                        <button
-                          onClick={() => window.open(project.link, "_blank")}
-                          className="p-2 bg-primary/90 hover:bg-primary text-primary-foreground rounded-full transition-all duration-300 shadow-lg"
-                          aria-label="Visit project"
-                        >
-                          <ArrowUpRight className="w-4 h-4" />
-                        </button>
-                      )}
-                      <button
-                        onClick={() => window.open(project.github, "_blank")}
-                        className="p-2 bg-primary/90 hover:bg-primary text-primary-foreground rounded-full transition-all duration-300 shadow-lg"
-                        aria-label="View source code"
-                      >
-                        <Github className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex-1 p-6 flex flex-col space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-sm font-bold text-white line-clamp-2">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {project.description}
-                    </p>
                   </div>
+                </Card>
 
-                  <div className="flex-1 flex flex-wrap gap-2 items-start content-start">
-                    {project.tech.map((tech, idx) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-secondary/60 hover:bg-secondary text-xs rounded-full font-medium border border-border/50 transition-all duration-300 whitespace-nowrap"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {expandedProject === project.title && (
+                  <div className="absolute inset-0 z-50 animate-fade-in">
+                    <Card className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 bg-gradient-to-br from-card to-card/50 border-border/50 shadow-2xl shadow-primary/30 overflow-hidden">
+                      <div className="relative">
+                        <img
+                          src={project.banner}
+                          alt={project.title}
+                          className="w-full h-48 object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <Badge className="absolute top-4 left-4 bg-primary/90 text-primary-foreground">
+                          {project.category}
+                        </Badge>
+                      </div>
+
+                      <div className="p-6 space-y-4">
+                        <h3 className="text-lg font-bold text-foreground">
+                          {project.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-1 bg-secondary/60 text-xs rounded-full font-medium border border-border/50"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex gap-2 pt-4 border-t border-border/30">
+                          {project.link && (
+                            <Button
+                              size="sm"
+                              className="flex-1 text-xs bg-primary hover:bg-primary/90"
+                              onClick={() => window.open(project.link, "_blank")}
+                            >
+                              <ExternalLink className="w-3 h-3 mr-1" />
+                              Visit
+                            </Button>
+                          )}
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1 text-xs border-primary/30 hover:bg-primary/10"
+                            onClick={() => window.open(project.github, "_blank")}
+                          >
+                            <Github className="w-3 h-3 mr-1" />
+                            Code
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
                   </div>
-
-                  <div className="flex gap-2 pt-4 border-t border-border/30">
-                    {project.link && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="flex-1 text-primary hover:bg-primary/10 border border-primary/20 hover:border-primary/40 transition-all duration-300"
-                        onClick={() => window.open(project.link, "_blank")}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-1" />
-                        <span className="text-xs">Visit</span>
-                      </Button>
-                    )}
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="flex-1 text-primary hover:bg-primary/10 border border-primary/20 hover:border-primary/40 transition-all duration-300"
-                      onClick={() => window.open(project.github, "_blank")}
-                    >
-                      <Github className="w-4 h-4 mr-1" />
-                      <span className="text-xs">Code</span>
-                    </Button>
-                  </div>
-                </div>
-
-                <div className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${hoveredProject === project.title ? "opacity-100" : "opacity-0"}`}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-                </div>
-              </Card>
+                )}
+              </div>
             </div>
           ))}
         </div>
